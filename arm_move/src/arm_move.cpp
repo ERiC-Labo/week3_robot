@@ -119,7 +119,15 @@ void Arm_Move::move_end_effector(double x1, double y1, double z1, double eef_ste
 
 void Arm_Move::return_home()
 {
-    std::vector<double> joint_value = {0.220046, -1.6059, 1.24065, -1.14717, -1.5684, -1.57072};
-    arm_group_->setJointValueTarget(joint_value);
+    arm_group_->setJointValueTarget(home_position_);
+    std::cout << "home position: ";
+    show_value<double>(home_position_);
     arm_group_->move();
+}
+
+void Arm_Move::home_position_register()
+{
+    home_position_ = arm_group_->getCurrentJointValues();
+    std::cout << "home position: ";
+    show_value<double>(home_position_);
 }

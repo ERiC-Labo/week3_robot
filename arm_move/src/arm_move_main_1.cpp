@@ -5,14 +5,20 @@ int main(int argc, char** argv)
     ros::init(argc, argv, "tsuchida_arm");
     ros::NodeHandle pnh("~");
     std::string object_name;
-    double tikara, front_length, place_x, place_y, place_z;
+    double tikara, front_length, place_x, place_y;
     pnh.getParam("object_name", object_name);
     pnh.getParam("force", tikara);
     pnh.getParam("front_length", front_length);
+    pnh.getParam("place_x", place_x);
+    pnh.getParam("place_y", place_y);
+    
+
     Arm_Move arm_hand;
     arm_hand.arm_register("manipulator");
-    arm_hand.hand_register("hand");
-    arm_hand.set_close_range(0.0197);
+    arm_hand.hand_register("gripper");
+    // arm_hand.set_close_range(0.0197);
+    arm_hand.set_close_range(tikara);
+    arm_hand.home_position_register();
     arm_hand.show_arm_joint();
     arm_hand.show_hand_joint();
     // arm_hand.hand_close();
@@ -42,7 +48,7 @@ int main(int argc, char** argv)
         loop.sleep();
     }
     arm_hand.move_end_effector(0, 0, 0.1, 0.001);
-    arm_hand.move_end_effector(0.0, -0.2, 0, 0.001);
+    arm_hand.move_end_effector(place_x, place_y, 0, 0.001);
     arm_hand.move_end_effector(0, 0, -0.1, 0.001);
     arm_hand.hand_open();
     arm_hand.return_home();

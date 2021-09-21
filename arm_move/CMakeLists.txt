@@ -10,7 +10,6 @@ find_package(catkin REQUIRED COMPONENTS
   moveit_ros_planning_interface
   moveit_visual_tools
   moveit_ros_visualization 
-  moveit
   roscpp
   actionlib
 )

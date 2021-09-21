@@ -25,12 +25,14 @@ public:
     void show_tf_value(std::string, std::string);
     void move_end_effector(double, double, double, double);
     void return_home();
+    void home_position_register();
     geometry_msgs::Point get_pose_tf(std::string, std::string);
     geometry_msgs::Point transform_to_target_point(geometry_msgs::TransformStamped);
     
 private:
     moveit::planning_interface::MoveGroupInterface *arm_group_;
     moveit::planning_interface::MoveGroupInterface *hand_group_;
+    std::vector<double> home_position_;
     ros::AsyncSpinner spinner;
     tf2_ros::TransformListener tfListener_;
     tf2_ros::Buffer tfBuffer_;

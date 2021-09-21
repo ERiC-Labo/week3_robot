@@ -57,7 +57,6 @@
   <build_depend>moveit_ros_planning</build_depend>
   <build_depend>moveit_ros_planning_interface</build_depend>
   <build_depend>moveit_visual_tools</build_depend>
-  <depend>moveit</depend>
   <depend>moveit_ros_visualization</depend>
 
 
