@@ -22,7 +22,7 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tf_publish/meshes/body.dae"/>
+                    <mesh filename="package://rikuken_robot/meshes/body.dae"/>
                 </geometry>
 
                 <!--origin xyz="0.086 0 0" rpy="0.0 ${pi/2} 0.0"/-->
@@ -30,7 +30,7 @@
             <collision>
                <!--origin xyz="0.086 0 0" rpy="0.0 ${pi/2} 0.0"/-->
                 <geometry>
-                    <mesh filename="package://tf_publish/meshes/body.dae"/>
+                    <mesh filename="package://rikuken_robot/meshes/body.dae"/>
                 </geometry>
             </collision>
         </link>
@@ -55,7 +55,7 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tf_publish/meshes/finger_11.dae"/>
+                    <mesh filename="package://rikuken_robot/meshes/finger_11.dae"/>
                 </geometry>
                 <material name="gray" />
                 <!--origin rpy="${pi/2} ${-pi/2} ${pi}" xyz="0.086 0 0"/-->
@@ -63,7 +63,7 @@
             <collision>
                 <!--origin rpy="${pi/2} ${-pi/2} ${pi}" xyz="0.086 0 0"/-->
                 <geometry>
-                    <mesh filename="package://tf_publish/meshes/finger_11.dae"/>
+                    <mesh filename="package://rikuken_robot/meshes/finger_11.dae"/>
                 </geometry>
             </collision>
         </link>
@@ -164,7 +164,7 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tf_publish/meshes/finger_22.dae"/>
+                    <mesh filename="package://rikuken_robot/meshes/finger_22.dae"/>
                 </geometry>
                 <material name="gray" />
                 <!--origin rpy="${-pi/2} ${3*pi/2} 0.0" xyz="0.086 0.02 0.0"/-->
@@ -172,7 +172,7 @@
             <collision>
                 <!--origin rpy="${-pi/2} ${3*pi/2} 0.0" xyz="0.086 0.02 0.0"/-->
                 <geometry>
-                    <mesh filename="package://tf_publish/meshes/finger_22.dae"/>
+                    <mesh filename="package://rikuken_robot/meshes/finger_22.dae"/>
                 </geometry>
             </collision>
         </link>

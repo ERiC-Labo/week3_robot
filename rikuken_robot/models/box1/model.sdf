@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+<model name="box1">
+  <pose>0 0 0.015 0 0 0</pose>
+    <link name="link">
+      <inertial>
+        <mass>0.3</mass>
+        <inertia>
+          <ixx>0.83</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.83</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.83</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.02 0.02 0.03</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.02 0.02 0.03</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://box1/materials/texture.material</uri>
+            <name>TestTexture</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

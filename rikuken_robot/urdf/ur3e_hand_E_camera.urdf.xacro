@@ -2,8 +2,8 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ur3e_gripper">
 
   <!--xacro:include filename="$(find ur5_description)/urdf/ur5_joint_limited_robot.urdf.xacro" /-->
-  <xacro:include filename="$(find tf_publish)/urdf/ur3e_joint_limited_robot.urdf.xacro" />
-  <xacro:include filename="$(find tf_publish)/urdf/hande_camera.urdf.xacro" />
+  <xacro:include filename="$(find rikuken_robot)/urdf/ur3e_joint_limited_robot.urdf.xacro" />
+  <xacro:include filename="$(find rikuken_robot)/urdf/hande_camera.urdf.xacro" />
   
   <!-- Robotiq Coupler -->
   <!--  + Height added by the coupler: 8mm -->
@@ -11,13 +11,13 @@
   <link name="robotiq_coupler">
     <visual>
       <geometry>
-        <mesh filename="package://tf_publish/meshes/robotiq_85_coupler.stl" />
+        <mesh filename="package://rikuken_robot/meshes/robotiq_85_coupler.stl" />
       </geometry>
       <material name="flat_black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://tf_publish/meshes/robotiq_85_coupler.stl" />
+        <mesh filename="package://rikuken_robot/meshes/robotiq_85_coupler.stl" />
       </geometry>
     </collision>
     <inertial>

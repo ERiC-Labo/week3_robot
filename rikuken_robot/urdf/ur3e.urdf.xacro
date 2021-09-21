@@ -5,8 +5,8 @@
   Author: Felix Messmer
 -->
 
-  <xacro:include filename="$(find tf_publish)/urdf/ur3e.transmission.xacro" />
-  <xacro:include filename="$(find tf_publish)/urdf/ur3e.gazebo.xacro" />
+  <xacro:include filename="$(find rikuken_robot)/urdf/ur3e.transmission.xacro" />
+  <xacro:include filename="$(find rikuken_robot)/urdf/ur3e.gazebo.xacro" />
 
   <xacro:macro name="cylinder_inertial" params="radius length mass *origin">
     <inertial>
@@ -64,7 +64,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 ${base_correction}"/>
         <geometry>
-          <mesh filename="package://tf_publish/meshes/ur3e/visual/base.dae"/>
+          <mesh filename="package://rikuken_robot/meshes/ur3e/visual/base.dae"/>
         </geometry>
         <material name="LightGrey">
           <color rgba="0.7 0.7 0.7 1.0"/>
@@ -73,7 +73,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 ${base_correction}"/>
         <geometry>
-          <mesh filename="package://tf_publish/meshes/ur3e/visual/base.dae"/>
+          <mesh filename="package://rikuken_robot/meshes/ur3e/visual/base.dae"/>
         </geometry>
       </collision>
       <xacro:cylinder_inertial radius="0.075" length="0.038" mass="${base_mass}">
@@ -105,7 +105,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
         <geometry>
-          <mesh filename="package://tf_publish/meshes/ur3e/visual/shoulder.dae"/>
+          <mesh filename="package://rikuken_robot/meshes/ur3e/visual/shoulder.dae"/>
         </geometry>
         <material name="LightGrey">
           <color rgba="0.7 0.7 0.7 1.0"/>
@@ -114,7 +114,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
         <geometry>
-          <mesh filename="package://tf_publish/meshes/ur3e/visual/shoulder.dae"/>
+          <mesh filename="package://rikuken_robot/meshes/ur3e/visual/shoulder.dae"/>
         </geometry>
       </collision>
       <xacro:cylinder_inertial radius="0.075" length="0.178" mass="${shoulder_mass}">
@@ -146,7 +146,7 @@
       <visual>
         <origin xyz="0 0 ${shoulder_offset}" rpy="${pi/2} 0 ${-pi/2}"/>
         <geometry>
-          <mesh filename="package://tf_publish/meshes/ur3e/visual/upperarm.dae"/>
+          <mesh filename="package://rikuken_robot/meshes/ur3e/visual/upperarm.dae"/>
         </geometry>
         <material name="LightGrey">
           <color rgba="0.7 0.7 0.7 1.0"/>
@@ -155,7 +155,7 @@
       <collision>
         <origin xyz="0 0 ${shoulder_offset}" rpy="${pi/2} 0 ${-pi/2}"/>
         <geometry>
-          <mesh filename="package://tf_publish/meshes/ur3e/visual/upperarm.dae"/>
+          <mesh filename="package://rikuken_robot/meshes/ur3e/visual/upperarm.dae"/>
         </geometry>
       </collision>
       <xacro:cylinder_inertial radius="0.075" length="${-1*__kinematics['forearm']['x']}" mass="${upper_arm_mass}">
@@ -187,7 +187,7 @@
       <visual>
         <origin xyz="0 0 ${elbow_offset}" rpy="${pi/2} 0 ${-pi/2}"/>
         <geometry>
-          <mesh filename="package://tf_publish/meshes/ur3e/visual/forearm.dae"/>
+          <mesh filename="package://rikuken_robot/meshes/ur3e/visual/forearm.dae"/>
         </geometry>
         <material name="LightGrey">
           <color rgba="0.7 0.7 0.7 1.0"/>
@@ -196,7 +196,7 @@
       <collision>
         <origin xyz="0 0 ${elbow_offset}" rpy="${pi/2} 0 ${-pi/2}"/>
         <geometry>
-          <mesh filename="package://tf_publish/meshes/ur3e/visual/forearm.dae"/>
+          <mesh filename="package://rikuken_robot/meshes/ur3e/visual/forearm.dae"/>
         </geometry>
       </collision>
       <xacro:cylinder_inertial radius="0.075" length="${-1*__kinematics['wrist_1']['x']}" mass="${forearm_mass}">
@@ -228,7 +228,7 @@
       <visual>
         <origin xyz="0 0 -0.104" rpy="${pi/2} 0 0"/>
         <geometry>
-          <mesh filename="package://tf_publish/meshes/ur3e/visual/wrist1.dae"/>
+          <mesh filename="package://rikuken_robot/meshes/ur3e/visual/wrist1.dae"/>
         </geometry>
         <material name="LightGrey">
           <color rgba="0.7 0.7 0.7 1.0"/>
@@ -237,7 +237,7 @@
       <collision>
         <origin xyz="0 0 -0.104" rpy="${pi/2} 0 0"/>
         <geometry>
-          <mesh filename="package://tf_publish/meshes/ur3e/visual/wrist1.dae"/>
+          <mesh filename="package://rikuken_robot/meshes/ur3e/visual/wrist1.dae"/>
         </geometry>
       </collision>
       <xacro:cylinder_inertial radius="0.075" length="${-1*__kinematics['wrist_2']['y']}" mass="${wrist_1_mass}">
@@ -269,7 +269,7 @@
       <visual>
         <origin xyz="0 0 -0.08535" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://tf_publish/meshes/ur3e/visual/wrist2.dae"/>
+          <mesh filename="package://rikuken_robot/meshes/ur3e/visual/wrist2.dae"/>
         </geometry>
         <material name="LightGrey">
           <color rgba="0.7 0.7 0.7 1.0"/>
@@ -278,7 +278,7 @@
       <collision>
         <origin xyz="0 0 -0.08535" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://tf_publish/meshes/ur3e/visual/wrist2.dae"/>
+          <mesh filename="package://rikuken_robot/meshes/ur3e/visual/wrist2.dae"/>
         </geometry>
       </collision>
       <xacro:cylinder_inertial radius="0.075" length="${__kinematics['wrist_3']['y']}" mass="${wrist_2_mass}">
@@ -310,7 +310,7 @@
       <visual>
         <origin xyz="0 0 -0.0921" rpy="${pi/2} 0 0"/>
         <geometry>
-          <mesh filename="package://tf_publish/meshes/ur3e/visual/wrist3.dae"/>
+          <mesh filename="package://rikuken_robot/meshes/ur3e/visual/wrist3.dae"/>
         </geometry>
         <material name="LightGrey">
           <color rgba="0.7 0.7 0.7 1.0"/>
@@ -319,7 +319,7 @@
       <collision>
         <origin xyz="0 0 -0.0921" rpy="${pi/2} 0 0"/>
         <geometry>
-          <mesh filename="package://tf_publish/meshes/ur3e/visual/wrist3.dae"/>
+          <mesh filename="package://rikuken_robot/meshes/ur3e/visual/wrist3.dae"/>
         </geometry>
       </collision>
       <xacro:cylinder_inertial radius="0.045" length="0.05" mass="${wrist_3_mass}">
